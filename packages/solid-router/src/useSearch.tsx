@@ -61,5 +61,7 @@ export function useSearch<
     select: (match: any) => {
       return opts.select ? opts.select(match.search) : match.search
     },
-  }) as Solid.Accessor<UseSearchResult<TRouter, TFrom, TStrict, TSelected>>
+  } as any) as Solid.Accessor<
+    UseSearchResult<TRouter, TFrom, TStrict, TSelected>
+  >
 }

@@ -735,7 +735,11 @@ export function useLinkProps<
     Solid.ComponentProps<'a'>,
     'style'
   > & { style?: Solid.JSX.CSSProperties } = () =>
-    isActive() ? {} : functionalUpdate(local.inactiveProps, {})
+    isActive()
+      ? {}
+      : (functionalUpdate(local.inactiveProps, {}) as {
+          style?: Solid.JSX.CSSProperties
+        })
 
   const resolvedClassName = () =>
     [local.class, resolvedActiveProps().class, resolvedInactiveProps().class]

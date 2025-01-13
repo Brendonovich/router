@@ -81,7 +81,7 @@ export const Match = (props: { matchId: string }) => {
           component={ResolvedCatchBoundary()}
           resetKey={resetKey()}
           errorComponent={routeErrorComponent() || ErrorComponent}
-          onCatch={(error) => {
+          onCatch={(error: Error) => {
             // Forward not found errors (we don't want to show the error component for these)
             if (isNotFound(error)) throw error
             warning(false, `Error in route match: ${props.matchId}`)
@@ -90,7 +90,7 @@ export const Match = (props: { matchId: string }) => {
         >
           <Dynamic
             component={ResolvedNotFoundBoundary()}
-            fallback={(error) => {
+            fallback={(error: any) => {
               // If the current not found handler doesn't exist or it has a
               // route ID which doesn't match the current route, rethrow the error
               if (
@@ -100,12 +100,7 @@ export const Match = (props: { matchId: string }) => {
               )
                 throw error
 
-              return (
-                <Dynamic
-                  component={routeNotFoundComponent()}
-                  {...(error as any)}
-                />
-              )
+              return <Dynamic component={routeNotFoundComponent()} {...error} />
             }}
           >
             <MatchInner matchId={props.matchId} />
@@ -332,13 +327,13 @@ export const Outlet = () => {
               when={matchId() === rootRouteId}
               fallback={<Match matchId={matchId()} />}
             >
-              {/* <Solid.Suspense
+              <Solid.Suspense
                 fallback={
                   <Dynamic component={router.options.defaultPendingComponent} />
                 }
               >
                 <Match matchId={matchId()} />
-              </Solid.Suspense> */}
+              </Solid.Suspense>
             </Solid.Show>
           )
         }}
