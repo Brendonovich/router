@@ -1,5 +1,5 @@
-import * as Solid from 'solid-js'
 import { useMatch } from './useMatch'
+import type * as Solid from 'solid-js'
 import type { AnyRouter, RegisteredRouter } from './router'
 import type { AllLoaderData, RouteById } from './routeInfo'
 import type { StrictOrFrom } from './utils'

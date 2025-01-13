@@ -1,8 +1,7 @@
 import * as Solid from 'solid-js'
 import { functionalUpdate } from '@tanstack/router-core'
 import { useRouter } from './useRouter'
-import type { ParsedLocation } from '@tanstack/router-core'
-import type { NonNullableUpdater } from '@tanstack/router-core'
+import type { NonNullableUpdater, ParsedLocation } from '@tanstack/router-core'
 
 const windowKey = 'window'
 const delimiter = '___'

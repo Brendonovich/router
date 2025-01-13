@@ -16,7 +16,6 @@ import {
   defaultTransformer,
   functionalUpdate,
   interpolatePath,
-  isMatch,
   joinPaths,
   last,
   matchPathname,
@@ -31,10 +30,6 @@ import {
 } from '@tanstack/router-core'
 import { isRedirect, isResolvedRedirect } from './redirects'
 import { isNotFound } from './not-found'
-import type {
-  TrailingSlashOption,
-  ViewTransitionOptions,
-} from '@tanstack/router-core'
 import type * as Solid from 'solid-js'
 import type {
   HistoryLocation,
@@ -42,7 +37,6 @@ import type {
   RouterHistory,
 } from '@tanstack/history'
 import type { NoInfer } from '@tanstack/solid-store'
-import type { Manifest } from '@tanstack/router-core'
 import type {
   AnyContext,
   AnyRoute,
@@ -65,10 +59,20 @@ import type {
   RoutesByPath,
 } from './routeInfo'
 import type {
+  AnySchema,
+  AnyValidator,
   ControlledPromise,
+  Manifest,
   NonNullableUpdater,
+  ParsedLocation,
   PickAsRequired,
+  ResolveRelativePath,
+  RouterTransformer,
+  SearchParser,
+  SearchSerializer,
+  TrailingSlashOption,
   Updater,
+  ViewTransitionOptions,
 } from '@tanstack/router-core'
 import type {
   AnyRouteMatch,
@@ -76,8 +80,6 @@ import type {
   MakeRouteMatchUnion,
   MatchRouteOptions,
 } from './Matches'
-import type { ParsedLocation } from '@tanstack/router-core'
-import type { SearchParser, SearchSerializer } from '@tanstack/router-core'
 import type {
   BuildLocationFn,
   CommitLocationOptions,
@@ -86,9 +88,6 @@ import type {
 import type { AnyRedirect, ResolvedRedirect } from './redirects'
 import type { NotFoundError } from './not-found'
 import type { NavigateOptions, ToOptions } from './link'
-import type { RouterTransformer } from '@tanstack/router-core'
-import type { AnySchema, AnyValidator } from '@tanstack/router-core'
-import type { ResolveRelativePath } from '@tanstack/router-core'
 
 declare global {
   interface Window {

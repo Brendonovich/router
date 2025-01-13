@@ -1,5 +1,5 @@
 import invariant from 'tiny-invariant'
-import { joinPaths, trimPathLeft, rootRouteId } from '@tanstack/router-core'
+import { joinPaths, rootRouteId, trimPathLeft } from '@tanstack/router-core'
 import { notFound } from './not-found'
 import { useLoaderData } from './useLoaderData'
 import { useLoaderDeps } from './useLoaderDeps'
@@ -12,53 +12,34 @@ import type { UseMatchRoute } from './useMatch'
 import type { UseLoaderDepsRoute } from './useLoaderDeps'
 import type { UseParamsRoute } from './useParams'
 import type { UseSearchRoute } from './useSearch'
-import type { RootRouteId } from '@tanstack/router-core'
-import type { UseNavigateResult } from './useNavigate'
-import type {
-  AnyRouteMatch,
-  MakeRouteMatchFromRoute,
-  MakeRouteMatchUnion,
-  RouteMatch,
-} from './Matches'
-import type { NavigateOptions, ToMaskOptions } from './link'
-import type { ParsedLocation } from '@tanstack/router-core'
-import type { RouteById, RouteIds, RoutePaths } from './routeInfo'
-import type { AnyRouter, RegisteredRouter, Router } from './router'
-import type {
-  Assign,
-  Constrain,
-  ConstrainLiteral,
-  Expand,
-  NoInfer,
-} from '@tanstack/router-core'
-import type { BuildLocationFn, NavigateFn } from './RouterProvider'
-import type { NotFoundError } from './not-found'
-import type { LazyRoute } from './fileRoute'
-import type {
-  AnySchema,
-  AnyValidator,
-  DefaultValidator,
-  ResolveSearchValidatorInput,
-  ResolveValidatorOutput,
-} from '@tanstack/router-core'
-import type { UseRouteContextRoute } from './useRouteContext'
-
 import type {
   AnyContext,
   AnyPathParams,
+  AnySchema,
+  AnyValidator,
+  Assign,
+  Constrain,
+  ConstrainLiteral,
   ContextAsyncReturnType,
   ContextReturnType,
+  DefaultValidator,
   ErrorRouteComponent,
+  Expand,
   InferAllContext,
   InferAllParams,
   InferFullSearchSchema,
   InferFullSearchSchemaInput,
+  NoInfer,
   NotFoundRouteComponent,
   ParamsOptions,
+  ParsedLocation,
   ResolveId,
   ResolveLoaderData,
   ResolveParams,
   ResolveRouteContext,
+  ResolveSearchValidatorInput,
+  ResolveValidatorOutput,
+  RootRouteId,
   RouteComponent,
   RouteContext,
   RoutePathOptions,
@@ -69,6 +50,20 @@ import type {
   TrimPathRight,
   UpdatableStaticRouteOption,
 } from '@tanstack/router-core'
+import type { UseNavigateResult } from './useNavigate'
+import type {
+  AnyRouteMatch,
+  MakeRouteMatchFromRoute,
+  MakeRouteMatchUnion,
+  RouteMatch,
+} from './Matches'
+import type { NavigateOptions, ToMaskOptions } from './link'
+import type { RouteById, RouteIds, RoutePaths } from './routeInfo'
+import type { AnyRouter, RegisteredRouter, Router } from './router'
+import type { BuildLocationFn, NavigateFn } from './RouterProvider'
+import type { NotFoundError } from './not-found'
+import type { LazyRoute } from './fileRoute'
+import type { UseRouteContextRoute } from './useRouteContext'
 
 export * from '@tanstack/router-core'
 

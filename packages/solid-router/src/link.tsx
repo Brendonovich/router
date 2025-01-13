@@ -3,23 +3,15 @@ import { Dynamic } from 'solid-js/web'
 import { mergeRefs } from '@solid-primitives/refs'
 import {
   deepEqual,
-  functionalUpdate,
   exactPathTest,
-  removeTrailingSlash,
+  functionalUpdate,
   preloadWarning,
+  removeTrailingSlash,
 } from '@tanstack/router-core'
 import { composeEventHandlers, useIntersectionObserver } from './utils'
 import { useMatch } from './useMatch'
 import { useRouter } from './useRouter'
 import { useRouterState } from './useRouterState'
-import type {
-  IsRequiredParams,
-  LinkCurrentTargetElement,
-  LinkOptionsProps,
-  RemoveLeadingSlashes,
-  RemoveTrailingSlashes,
-  ResolveRelativePath,
-} from '@tanstack/router-core'
 import type {
   AllParams,
   CatchAllPaths,
@@ -35,18 +27,25 @@ import type { AnyRouter, RegisteredRouter } from './router'
 import type {
   Constrain,
   ConstrainLiteral,
+  CurrentPath,
   Expand,
+  IsRequiredParams,
+  LinkCurrentTargetElement,
+  LinkOptionsProps,
   MakeDifferenceOptional,
   NoInfer,
   NonNullableUpdater,
+  ParentPath,
+  ParsedLocation,
   PickRequired,
+  RemoveLeadingSlashes,
+  RemoveTrailingSlashes,
+  ResolveRelativePath,
   Updater,
+  ViewTransitionOptions,
   WithoutEmpty,
 } from '@tanstack/router-core'
 import type { HistoryState } from '@tanstack/history'
-import type { ParsedLocation } from '@tanstack/router-core'
-import type { ViewTransitionOptions } from '@tanstack/router-core'
-import type { CurrentPath, ParentPath } from '@tanstack/router-core'
 
 export type FindDescendantPaths<
   TRouter extends AnyRouter,

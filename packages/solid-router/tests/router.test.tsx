@@ -7,6 +7,7 @@ import {
   waitFor,
 } from '@solidjs/testing-library'
 import { z } from 'zod'
+import { onMount } from 'solid-js'
 import {
   Link,
   Outlet,
@@ -17,7 +18,6 @@ import {
   createRouter,
 } from '../src'
 import type { AnyRoute, AnyRouter, RouterOptions } from '../src'
-import { onMount } from 'solid-js'
 
 afterEach(() => {
   vi.resetAllMocks()
