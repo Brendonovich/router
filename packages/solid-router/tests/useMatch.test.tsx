@@ -59,8 +59,8 @@ describe('useMatch', () => {
       async (shouldThrow) => {
         function RootComponent() {
           const match = useMatch({ from: '/posts', shouldThrow })
-          expect(match).toBeDefined()
-          expect(match!.routeId).toBe('/posts')
+          expect(match()).toBeDefined()
+          expect(match()!.routeId).toBe('/posts')
           return <Outlet />
         }
 
