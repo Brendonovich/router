@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest'
 import { afterEach, expect, test } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@solidjs/testing-library'
+import * as Solid from 'solid-js'
 
 import { z } from 'zod'
 import {
@@ -139,7 +140,7 @@ test('when navigating from /posts to ./$postId', async () => {
     const navigate = useNavigate()
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <button onClick={() => navigate({ to: '/' })}>Index</button>
       </>
     )
@@ -249,7 +250,7 @@ test('when navigating from /posts to ../posts/$postId', async () => {
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <button onClick={() => navigate({ to: '/' })}>Index</button>
       </>
     )
@@ -346,7 +347,7 @@ test('when navigating from /posts/$postId to /posts/$postId/info and the current
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -491,7 +492,7 @@ test('when navigating from /posts/$postId to ./info and the current route is /po
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -634,7 +635,7 @@ test('when navigating from /posts/$postId to ../$postId and the current route is
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -775,7 +776,7 @@ test('when navigating from /posts/$postId with an index to ../$postId and the cu
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -926,7 +927,7 @@ test('when navigating from /invoices to ./invoiceId and the current route is /po
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -940,7 +941,7 @@ test('when navigating from /invoices to ./invoiceId and the current route is /po
 
   const DetailsComponent = () => {
     const navigate = useNavigate()
-    const [error, setError] = React.useState<unknown>()
+    const [_error, setError] = Solid.createSignal<unknown>()
     return (
       <>
         <h1>Details!</h1>
@@ -999,7 +1000,7 @@ test('when navigating from /invoices to ./invoiceId and the current route is /po
     const params = useParams({ strict: false })
     return (
       <>
-        <span>invoiceId: {params.invoiceId}</span>
+        <span>invoiceId: {params().invoiceId}</span>
       </>
     )
   }
@@ -1083,7 +1084,7 @@ test('when navigating to /posts/$postId/info which is masked as /posts/$postId',
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -1184,7 +1185,7 @@ test('when navigating to /posts/$postId/info which is imperatively masked as /po
     const params = useParams({ strict: false })
     return (
       <>
-        <span>Params: {params.postId}</span>
+        <span>Params: {params().postId}</span>
         <Outlet />
       </>
     )
@@ -1241,8 +1242,8 @@ test('when setting search params with 2 parallel navigate calls', async () => {
     return (
       <>
         <h1>Index</h1>
-        <div data-testid="param1">{search.param1}</div>
-        <div data-testid="param2">{search.param2}</div>
+        <div data-testid="param1">{search().param1}</div>
+        <div data-testid="param2">{search().param2}</div>
         <button
           onClick={() => {
             navigate({

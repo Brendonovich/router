@@ -1,5 +1,5 @@
-import * as Solid from 'solid-js'
 import { useMatch } from './useMatch'
+import type * as Solid from 'solid-js'
 import type { FullSearchSchema, RouteById } from './routeInfo'
 import type { AnyRouter, RegisteredRouter } from './router'
 import type { StrictOrFrom } from './utils'
@@ -61,5 +61,7 @@ export function useSearch<
     select: (match: any) => {
       return opts.select ? opts.select(match.search) : match.search
     },
-  }) as Solid.Accessor<UseSearchResult<TRouter, TFrom, TStrict, TSelected>>
+  } as any) as Solid.Accessor<
+    UseSearchResult<TRouter, TFrom, TStrict, TSelected>
+  >
 }

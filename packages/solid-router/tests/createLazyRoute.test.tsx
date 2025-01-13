@@ -1,11 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import {
-  cleanup,
-  configure,
-  fireEvent,
-  render,
-  screen,
-} from '@solidjs/testing-library'
+import { cleanup, fireEvent, render, screen } from '@solidjs/testing-library'
 import {
   Link,
   RouterProvider,
@@ -54,8 +48,6 @@ function createTestRouter(initialHistory?: RouterHistory) {
 }
 
 describe('preload: matched routes', { timeout: 20000 }, () => {
-  configure({ reactStrictMode: true })
-
   it('should wait for lazy options to be streamed in before ', async () => {
     const { router } = createTestRouter(
       createMemoryHistory({ initialEntries: ['/'] }),

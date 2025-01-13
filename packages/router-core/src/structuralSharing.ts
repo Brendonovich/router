@@ -1,4 +1,4 @@
-import type { Constrain } from './utils'
+// import type { Constrain } from './utils'
 
 export interface OptionalStructuralSharing<TStructuralSharing, TConstraint> {
   // readonly structuralSharing?:

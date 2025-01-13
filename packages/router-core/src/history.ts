@@ -5,5 +5,6 @@ declare module '@tanstack/history' {
     __tempLocation?: HistoryLocation
     __tempKey?: string
     __hashScrollIntoViewOptions?: boolean | ScrollIntoViewOptions
+    key: string
   }
 }
