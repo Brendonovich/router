@@ -1786,6 +1786,8 @@ export class Router<
                 __tempKey: undefined!,
                 __tempLocation: undefined!,
                 key: undefined!,
+                // Required by router-core. Does history need indexing?
+                __TSR_index: 0,
               },
             },
           },
