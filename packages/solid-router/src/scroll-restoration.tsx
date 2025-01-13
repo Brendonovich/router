@@ -50,7 +50,7 @@ export type ScrollRestorationOptions = {
  * The `location.href` is used as a fallback to support the use case where the location state is not available like the initial render.
  */
 const defaultGetKey = (location: ParsedLocation) => {
-  return location.state.key! || location.href
+  return location.state.key || location.href
 }
 
 export function useScrollRestoration(options?: ScrollRestorationOptions) {
