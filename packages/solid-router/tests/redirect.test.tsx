@@ -1,6 +1,5 @@
 import {
   cleanup,
-  configure,
   fireEvent,
   render,
   screen,
@@ -32,7 +31,6 @@ const WAIT_TIME = 100
 
 describe('redirect', () => {
   describe('SPA', () => {
-    configure({ reactStrictMode: true })
     test('when `redirect` is thrown in `beforeLoad`', async () => {
       const nestedLoaderMock = vi.fn()
       const nestedFooLoaderMock = vi.fn()
