@@ -1,7 +1,7 @@
-import { ParsePathParams } from './link'
-import { RootRouteId } from './root'
-import { Assign } from './utils'
-import {
+import type { ParsePathParams } from './link'
+import type { RootRouteId } from './root'
+import type { Assign } from './utils'
+import type {
   AnySchema,
   AnyStandardSchemaValidator,
   AnyValidatorAdapter,

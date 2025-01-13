@@ -1,5 +1,5 @@
-import { DeferredPromiseState } from './defer'
-import { ControlledPromise } from './utils'
+import type { DeferredPromiseState } from './defer'
+import type { ControlledPromise } from './utils'
 
 export interface ViewTransitionOptions {
   types: Array<string>
